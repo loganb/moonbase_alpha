@@ -20,7 +20,9 @@ module LambdaLayerCake
         cmd = %W{docker build -f #{dockerfile_path} 
           --build-arg RUNTIME_VERSION=#{RUBY_VERSION} 
           --build-arg BLDTIME_PKGS=#{config.build_packages.join(" ")}
+          --build-arg RUNTIME_PKGS=#{config.run_packages.join(" ")}
           --build-arg COMPILE_ASSETS=#{config.compile_assets.to_s}
+          
           -t #{tag}
           #{root}}
         system(*cmd) or raise 
