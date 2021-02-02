@@ -5,6 +5,3 @@ gemspec
 
 gem "rake", "~> 12.0"
 gem "minitest", "~> 5.0"
-
-gem "lamby"
-gem 'aws_lambda_ric'
